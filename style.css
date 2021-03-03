@@ -1,0 +1,48 @@
+* {
+    margin: 0;      /* removes all spacing */
+    padding: 0;
+    box-sizing: border-box;      /* stop elements from grow outside */
+}
+
+body {
+    display: flex;
+    align-items: center;      /* vertically */
+    justify-content: center;      /* horizontally */
+    min-height: 100vh;      /* It'll take the whole screen */
+}
+
+.container {
+    position: relative;      /* Make outer div relative */
+    width: 30vw;
+    height: 80vh;
+}
+
+.img-container-after, .img-container-before {   /* Make inner div absolute */
+    position: absolute;      /* let images on top of each other */
+    width: 30vw;      /* width,height same because we need to cut half of these */
+    height: 80vh;
+}
+
+.img-container-before {
+    width: 15vw;
+    overflow: hidden;
+}
+
+img {
+    width: 30vw;
+    height: 80vh;
+    object-fit: cover;      /* stop image streching */
+    
+}
+
+.slider {
+    width: 0.5rem;
+    background: white;
+    height: 100%;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    pointer-events: none;      /* Stop flickering. So, we can't click on the slider */
+}
